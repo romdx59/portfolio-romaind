@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Portfolio de Romain Desreumaux, développeur d'applications."
+    >
+
+    <title>Romain Desreumaux — Développeur d'applications</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar container">
+
+            <a href="#about" class="logo">ROMAIN.</a>
+
+            <button
+                class="menu-toggle"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#tools">Outils</a></li>
+                <li><a href="#experience">Expériences professionnelles</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- CONTENU PRINCIPAL -->
+    <main>
+
+        <!-- ACCUEIL -->
+        <section class="hero" id="home">
+            <div class="container hero-container">
+
+                <div class="hero-content reveal">
+
+                    <p class="hero-label">
+                        DÉVELOPPEUR D'APPLICATIONS
+                    </p>
+
+                    <h1>
+                        Des idées.<br>
+                        Du code.<br>
+                        <span>Du concret.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Je développe des applications et des projets web
+                        en donnant vie à mes idées grâce au code,
+                        à la créativité et à l'apprentissage continu.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            Découvrir mes projets
+                        </a>
+
+                        <a href="#about" class="btn btn-secondary">
+                            À propos de moi
+                        </a>
+                    </div>
+
+                    <div class="hero-tags">
+                        <span>PHP</span>
+                        <span>Symfony</span>
+                        <span>Java</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+
+                </div>
+
+                <!-- VISUEL ANIMÉ -->
+                <div class="hero-visual" aria-hidden="true">
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+                    <div class="orbit orbit-three"></div>
+
+                    <div class="visual-core">
+                        <span>&lt;/&gt;</span>
+                    </div>
+
+                    <div class="floating-card card-code">
+                        <span class="card-icon">&lt;/&gt;</span>
+                        <div>
+                            <strong>Code</strong>
+                            <small>Créer et développer</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-dev">
+                        <span class="card-icon">{ }</span>
+                        <div>
+                            <strong>Développement</strong>
+                            <small>Imaginer des solutions</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-idea">
+                        <span class="card-icon">*</span>
+                        <div>
+                            <strong>Créativité</strong>
+                            <small>Donner vie aux idées</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 1. À PROPOS -->
+        <section class="section" id="about">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <p class="section-label">QUI SUIS-JE ?</p>
+                    <h2>À propos</h2>
+                    <p>
+                        Découvre mon profil, mon parcours et mes objectifs
+                        dans le développement informatique.
+                    </p>
+                </div>
+
+                <div class="about-content reveal">
+                    <p>
+                        Je m'intéresse au développement d'applications,
+                        à la programmation et à la création de projets
+                        numériques. J'aime apprendre de nouvelles
+                        technologies, expérimenter et améliorer mes
+                        compétences à travers des projets concrets.
+                    </p>
+
+                    <p>
+                        Mon objectif est de continuer à progresser
+                        dans le développement afin de concevoir des
+                        applications utiles, modernes et accessibles.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 2. COMPÉTENCES -->
+        <section class="section section-alt" id="skills">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <p class="section-label">CE QUE JE SAIS FAIRE</p>
+                    <h2>Compétences</h2>
+                    <p>
+                        Les langages et technologies que j'apprends
+                        et que j'utilise dans mes projets.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+
+                    <article class="skill-card reveal">
+                        <h3>Développement web</h3>
+                        <p>
+                            HTML, CSS et JavaScript pour créer
+                            des interfaces web.
+                        </p>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <h3>Programmation</h3>
+                        <p>
+                            PHP et Java pour apprendre à développer
+                            des fonctionnalités et des applications.
+                        </p>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <h3>Développement backend</h3>
+                        <p>
+                            Découverte du développement côté serveur
+                            et du framework Symfony.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 3. OUTILS -->
+        <section class="section" id="tools">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <p class="section-label">MON ENVIRONNEMENT</p>
+                    <h2>Outils</h2>
+                    <p>
+                        Les outils utilisés pour coder, organiser
+                        et suivre mes projets.
+                    </p>
+                </div>
+
+                <div class="tools-grid">
+
+                    <article class="tool-card reveal">
+                        <h3>Visual Studio Code</h3>
+                        <p>Éditeur de code</p>
+                    </article>
+
+                    <article class="tool-card reveal">
+                        <h3>Git</h3>
+                        <p>Gestion de versions</p>
+                    </article>
+
+                    <article class="tool-card reveal">
+                        <h3>GitHub</h3>
+                        <p>Hébergement de dépôts</p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 4. EXPÉRIENCES PROFESSIONNELLES -->
+        <section class="section section-alt" id="experience">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <p class="section-label">MON PARCOURS</p>
+                    <h2>Expériences professionnelles</h2>
+                    <p>
+                        Mon parcours, mes formations et les expériences
+                        qui contribuent à mon évolution.
+                    </p>
+                </div>
+
+                <div class="experience-content reveal">
+                    <article class="experience-card">
+                        <h3>Formation en cours</h3>
+                        <p>
+                            Développement et conception d'applications.
+                        </p>
+                        <p>
+                            J'approfondis progressivement mes connaissances
+                            en programmation et en développement web.
+                        </p>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 5. PROJETS -->
+        <section class="section" id="projects">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <p class="section-label">MES RÉALISATIONS</p>
+                    <h2>Projets</h2>
+                    <p>
+                        Une sélection de projets personnels et de travaux
+                        qui illustrent mon apprentissage.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+
+                    <article class="project-card reveal">
+                        <div class="project-placeholder">
+                            <span>&lt;/&gt;</span>
+                        </div>
+
+                        <div class="project-content">
+                            <p class="project-category">DÉVELOPPEMENT WEB</p>
+                            <h3>Mon portfolio</h3>
+                            <p>
+                                Un site personnel pour présenter mon profil,
+                                mes compétences et mes projets.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Ajoute ici tes autres projets réels -->
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 6. CONTACT -->
+        <section class="section section-alt" id="contact">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <p class="section-label">RESTONS EN CONTACT</p>
+                    <h2>Contact</h2>
+                    <p>
+                        Tu souhaites découvrir mes projets ou échanger
+                        à propos du développement ? Retrouve-moi ici.
+                    </p>
+                </div>
+
+                <div class="contact-content reveal">
+
+                    <a
+                        href="https://github.com/romdx59"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-link"
+                    >
+                        Mon profil GitHub
+                    </a>
+
+                    <!-- Ajoute ton adresse e-mail ici si tu souhaites
+                         la rendre publique sur ton portfolio. -->
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© <span id="current-year"></span> Romain Desreumaux</p>
+            <a href="#home">Retour en haut</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+
+</body>
+</html>

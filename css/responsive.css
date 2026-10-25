@@ -1,0 +1,313 @@
+/* =========================
+   PETITS ÉCRANS ET TABLETTES
+========================= */
+
+@media (max-width: 1050px) {
+    .container {
+        width: min(var(--container), calc(100% - 40px));
+    }
+
+    .navbar {
+        gap: 18px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 0.81rem;
+    }
+
+    .hero-container {
+        gap: 25px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 6vw, 4.5rem);
+    }
+
+    .hero-visual {
+        transform: scale(0.9);
+    }
+
+    .card-dev {
+        right: -5%;
+    }
+}
+
+
+/* =========================
+   MENU MOBILE
+========================= */
+
+@media (max-width: 760px) {
+    html {
+        scroll-padding-top: 82px;
+    }
+
+    section[id] {
+        scroll-margin-top: 82px;
+    }
+
+    .container {
+        width: calc(100% - 36px);
+    }
+
+    .navbar {
+        min-height: 70px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 102;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        z-index: 101;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+
+        padding: 12px 20px 20px;
+        background: rgba(11, 11, 16, 0.97);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(18px);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-8px);
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 11px 8px;
+        font-size: 0.95rem;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    /* Classe activée par js/main.js */
+    .header.menu-open .nav-links {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .header.menu-open .menu-toggle span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .header.menu-open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .header.menu-open .menu-toggle span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+
+    /* Accueil */
+    .hero {
+        min-height: auto;
+        padding: 75px 0 60px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.8rem, 10vw, 4.5rem);
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        margin-inline: auto;
+        font-size: 1rem;
+    }
+
+    .hero-actions,
+    .hero-tags {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        min-height: 380px;
+        margin-top: 0;
+        transform: scale(0.85);
+        transform-origin: center top;
+        margin-bottom: -45px;
+    }
+
+    .card-code {
+        left: 1%;
+    }
+
+    .card-dev {
+        right: 0;
+    }
+
+
+    /* Sections */
+    .section {
+        padding: 75px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(2rem, 7vw, 2.7rem);
+    }
+
+    .about-content {
+        padding: 25px;
+    }
+
+    .skills-grid,
+    .tools-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .skill-card,
+    .tool-card {
+        padding: 22px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card {
+        padding: 25px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+}
+
+
+/* =========================
+   TRÈS PETITS ÉCRANS
+========================= */
+
+@media (max-width: 420px) {
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .hero {
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 2.65rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero-tags {
+        gap: 7px;
+    }
+
+    .hero-tags span {
+        padding: 5px 9px;
+        font-size: 0.72rem;
+    }
+
+    .hero-visual {
+        min-height: 330px;
+        transform: scale(0.72);
+        margin-bottom: -75px;
+    }
+
+    .floating-card {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .floating-card small {
+        font-size: 0.65rem;
+    }
+
+    .card-code {
+        left: 0;
+    }
+
+    .card-dev {
+        right: 0;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .skills-grid,
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card,
+    .tool-card {
+        padding: 22px;
+    }
+
+    .about-content {
+        padding: 20px;
+    }
+
+    .experience-card {
+        padding: 22px 18px;
+    }
+
+    .project-placeholder {
+        min-height: 180px;
+    }
+
+    .project-content {
+        padding: 22px;
+    }
+}

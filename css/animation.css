@@ -1,0 +1,158 @@
+/* =========================
+   APPARITIONS
+========================= */
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fade-up 0.8s ease both;
+}
+
+.hero-visual {
+    animation: fade-up 1s ease 0.15s both;
+}
+
+.hero-label {
+    animation: fade-up 0.6s ease 0.1s both;
+}
+
+.hero h1 {
+    animation: fade-up 0.7s ease 0.15s both;
+}
+
+.hero-description {
+    animation: fade-up 0.7s ease 0.25s both;
+}
+
+.hero-actions {
+    animation: fade-up 0.7s ease 0.35s both;
+}
+
+.hero-tags {
+    animation: fade-up 0.7s ease 0.45s both;
+}
+
+
+/* =========================
+   ÉLÉMENTS AU DÉFILEMENT
+========================= */
+
+/*
+   Par défaut, le contenu reste visible.
+   Si js/animations.js ajoute la classe "is-visible",
+   les éléments peuvent apparaître progressivement.
+*/
+
+.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.is-visible {
+    animation: fade-up 0.7s ease both;
+}
+
+
+/* =========================
+   CARTES FLOTTANTES
+========================= */
+
+.floating-card {
+    will-change: transform;
+}
+
+.card-code {
+    animation: float-card 5s ease-in-out infinite;
+}
+
+.card-dev {
+    animation: float-card 5.5s ease-in-out -1.5s infinite;
+}
+
+.card-idea {
+    animation: float-card 6s ease-in-out -3s infinite;
+}
+
+
+/* =========================
+   LUEUR DU VISUEL CENTRAL
+========================= */
+
+.visual-core {
+    animation: core-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes core-glow {
+    from {
+        box-shadow:
+            0 0 30px rgba(139, 92, 246, 0.15),
+            inset 0 0 25px rgba(96, 165, 250, 0.06);
+    }
+
+    to {
+        box-shadow:
+            0 0 55px rgba(139, 92, 246, 0.3),
+            inset 0 0 35px rgba(96, 165, 250, 0.13);
+    }
+}
+
+
+/* =========================
+   EFFETS AU SURVOL
+========================= */
+
+.skill-card,
+.tool-card,
+.project-card,
+.contact-link,
+.btn {
+    will-change: transform;
+}
+
+.skill-card:hover,
+.tool-card:hover,
+.project-card:hover {
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* =========================
+   ACCESSIBILITÉ
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+        will-change: auto !important;
+    }
+
+    .reveal,
+    .hero-content,
+    .hero-visual,
+    .hero-label,
+    .hero h1,
+    .hero-description,
+    .hero-actions,
+    .hero-tags {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
