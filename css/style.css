@@ -1159,3 +1159,28 @@ button:focus-visible {
     white-space: normal;
     overflow-wrap: break-word;
 }
+
+/* BOUTON CV */
+
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 25px;
+    padding: 13px 24px;
+
+    background: linear-gradient(135deg, var(--purple), var(--blue));
+    color: white;
+
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cv-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
