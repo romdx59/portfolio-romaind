@@ -37,3 +37,38 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCarousel();
     });
 });
+
+// ==============================
+// THEME SWITCHER
+// ==============================
+
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = themeToggle.querySelector("i");
+
+// Récupération du thème sauvegardé
+let currentTheme = localStorage.getItem("theme") || "dark";
+
+// Application du thème
+function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+
+    if (theme === "light") {
+        themeIcon.className = "fas fa-moon";
+        themeToggle.setAttribute("aria-label", "Activer le mode sombre");
+    } else {
+        themeIcon.className = "fas fa-sun";
+        themeToggle.setAttribute("aria-label", "Activer le mode clair");
+    }
+}
+
+// Initialisation
+applyTheme(currentTheme);
+
+// Changement de thème
+themeToggle.addEventListener("click", () => {
+    currentTheme = currentTheme === "dark" ? "light" : "dark";
+
+    localStorage.setItem("theme", currentTheme);
+
+    applyTheme(currentTheme);
+});

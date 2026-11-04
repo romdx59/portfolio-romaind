@@ -19,6 +19,33 @@
     --transition: 0.3s ease;
 }
 
+/* MODE CLAIR */
+[data-theme="light"] {
+    --bg: #f5f6fa;
+    --surface: #ffffff;
+    --text: #171725;
+    --text-muted: #646477;
+    --border: rgba(0, 0, 0, 0.1);
+}
+
+/* SECTION CONTACT - MODE CLAIR */
+
+[data-theme="light"] #contact .section-tag,
+[data-theme="light"] #contact h2,
+[data-theme="light"] #contact p {
+    color: #000000 !important;
+    opacity: 1 !important;
+}
+
+/* Texte des autres sections */
+[data-theme="light"] .section-heading .section-tag {
+    color: #6d28d9;
+}
+
+[data-theme="light"] .section-heading p {
+    color: #424256;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -526,6 +553,22 @@ main,
     }
 }
 
+/* =========================
+   SECTION-ALT - THÈME CLAIR
+========================= */
+
+[data-theme="light"] .section-alt,
+[data-theme="light"] .section-alt h1,
+[data-theme="light"] .section-alt h2,
+[data-theme="light"] .section-alt h3,
+[data-theme="light"] .section-alt h4,
+[data-theme="light"] .section-alt p,
+[data-theme="light"] .section-alt span,
+[data-theme="light"] .section-alt li,
+[data-theme="light"] .section-alt strong {
+    color: #000000 !important;
+    opacity: 1 !important;
+}
 
 /* =========================
    SECTIONS
@@ -686,6 +729,7 @@ main,
     color: var(--text-muted);
     font-size: 0.88rem;
 }
+
 
 
 /* =========================
@@ -1001,8 +1045,8 @@ button:focus-visible {
 .framework-track {
     display: flex;
     width: 100%;
+    transition: transform 0.5s ease-in-out;
 }
-
 .framework-card {
     display: grid !important;
     grid-template-columns: 80px minmax(0, 1fr) !important;
@@ -1183,4 +1227,45 @@ button:focus-visible {
 .cv-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+/* BOUTON THEME */
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: var(--surface);
+    color: var(--text);
+
+    font-size: 1.1rem;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--purple);
+    border-color: var(--purple);
+    transform: rotate(15deg);
+}
+
+body,
+.header,
+.section,
+.footer,
+.skill-logo,
+.framework-card,
+.tool-card {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
 }
