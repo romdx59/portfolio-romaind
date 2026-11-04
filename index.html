@@ -271,21 +271,52 @@
                     <p>Les frameworks que j'utilise ou que je découvre.</p>
                 </div>
             
-                <div class="frameworks-grid">
-                
-                    <article class="framework-card reveal">
+                <div class="framework-carousel reveal">
+
+            <button class="framework-arrow prev" aria-label="Framework précédent">
+                &#10094;
+            </button>
+
+            <div class="framework-window">
+                <div class="framework-track">
+
+                    <!-- FRAMEWORK 1 -->
+                    <article class="framework-card">
                         <div class="framework-icon">
                             <i class="devicon-symfony-original"></i>
+                            <img src="assets/images/symfony.png">
                         </div>
-                    
+
                         <div class="framework-info">
                             <h3>Symfony</h3>
                             <p>Framework PHP utilisé pour le développement d'applications web.</p>
+                            <span class="framework-status">Acquis</span>
+                        </div>
+                    </article>
+
+                    <article class="framework-card">
+                        <div class="framework-icon">
+                            <i class="devicon-react-original"></i>
+                            <img src="assets/images/react.png">
+                        </div>
+                    
+                        <div class="framework-info">
+                            <h3>React</h3>
+                            <p>Framework JavaScript utilisé pour construire des interfaces utilisateur.</p>
                             <span class="framework-status">En apprentissage</span>
                         </div>
                     </article>
-                
+
+                    <!-- AJOUTE TES AUTRES FRAMEWORKS ICI -->
+
                 </div>
+            </div>
+
+            <button class="framework-arrow next" aria-label="Framework suivant">
+                &#10095;
+            </button>
+
+        </div>
             
             </div>
         </section>

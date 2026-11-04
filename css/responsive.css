@@ -313,13 +313,33 @@
 }
 
 @media (max-width: 600px) {
-    .frameworks-grid {
-        grid-template-columns: 1fr;
+    .framework-carousel {
+        gap: 8px;
+    }
+
+    .framework-arrow {
+        width: 35px;
+        min-width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
     }
 
     .framework-card {
-        padding: 20px;
+        grid-template-columns: 60px minmax(0, 1fr);
         gap: 15px;
+        padding: 18px;
+    }
+
+    .framework-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .framework-icon i,
+    .framework-icon img {
+        width: 50px;
+        height: 50px;
+        font-size: 2.8rem;
     }
 }
 

@@ -979,63 +979,69 @@ button:focus-visible {
    FRAMEWORKS
 ============================== */
 
-.frameworks-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
-}
+/* ==============================
+   FRAMEWORK CAROUSEL
+============================== */
 
-.framework-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 26px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    transition: transform var(--transition),
-                border-color var(--transition),
-                box-shadow var(--transition);
-}
-
-.framework-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(139, 92, 246, 0.5);
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.08);
-}
-
-.framework-icon {
+.framework-carousel {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 55px;
-    height: 55px;
-    border-radius: 14px;
-    background: rgba(139, 92, 246, 0.12);
-    color: var(--purple);
-    font-size: 2rem;
+    gap: 20px;
+    max-width: 850px;
+    margin: 0 auto;
 }
 
-.framework-info h3 {
-    margin-bottom: 8px;
+.framework-window {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.framework-track {
+    display: flex;
+    width: 100%;
+}
+
+.framework-card {
+    display: grid !important;
+    grid-template-columns: 80px minmax(0, 1fr) !important;
+    align-items: center;
+    gap: 25px;
+
+    width: 100%;
+    min-width: 100%;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 26px;
+}
+
+.framework-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    min-width: 45px;
+    height: 45px;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: var(--surface);
+    color: var(--text);
+
     font-size: 1.1rem;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
 }
 
-.framework-info p {
-    margin-bottom: 14px;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.framework-status {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 20px;
-    background: rgba(139, 92, 246, 0.12);
-    color: var(--purple);
-    font-size: 0.75rem;
-    font-weight: 600;
+.framework-arrow:hover {
+    background: var(--purple);
+    border-color: var(--purple);
+    color: white;
+    transform: scale(1.08);
 }
 
 /* ==============================
@@ -1116,4 +1122,40 @@ button:focus-visible {
     height: 100px;
     object-fit: contain;
     display: block;
+}
+
+/* Taille des logos Frameworks */
+.framework-icon i,
+.framework-icon img {
+    width: 65px;
+    height: 65px;
+    font-size: 3.5rem;
+    object-fit: contain;
+}
+
+.framework-icon {
+    grid-column: 1;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.framework-info {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+
+    width: 100% !important;
+    min-width: 0;
+    max-width: none !important;
+}
+
+.framework-info h3,
+.framework-info p {
+    width: 100%;
+    max-width: none !important;
+    white-space: normal;
+    overflow-wrap: break-word;
 }
