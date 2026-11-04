@@ -362,3 +362,30 @@
         gap: 15px;
     }
 }
+
+/* =========================
+   TOOLS SLIDER RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .tools-group {
+        gap: 35px;
+        padding-right: 35px;
+    }
+
+    .tool-logo {
+        min-width: 85px;
+        gap: 10px;
+    }
+
+    .tool-logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .tool-logo span {
+        font-size: 0.75rem;
+    }
+
+}

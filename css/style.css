@@ -1129,12 +1129,13 @@ button:focus-visible {
     border: none;
     border-radius: 0;
 
-    transition: transform var(--transition);
+    transition: transform 0.3s ease;
 }
 
 
 .skill-logo i {
     font-size: 3.5rem;
+    transition: transform 0.3s ease;
 }
 
 .skill-logo span {
@@ -1144,8 +1145,14 @@ button:focus-visible {
 }
 
 .skill-logo:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
+
+.skill-logo:hover img,
+.skill-logo:hover i {
+    transform: scale(1.12);
+}
+
 
 .skills-slider:hover .skills-track {
     animation-play-state: paused;
@@ -1166,6 +1173,7 @@ button:focus-visible {
     height: 100px;
     object-fit: contain;
     display: block;
+    transition: transform 0.3s ease;
 }
 
 /* Taille des logos Frameworks */
@@ -1268,4 +1276,104 @@ body,
         background-color 0.3s ease,
         color 0.3s ease,
         border-color 0.3s ease;
+}
+
+/* =========================
+   TOOLS SLIDER
+========================= */
+
+.tools-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    box-sizing: border-box;
+
+    /* Fondu sur les côtés */
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 8%,
+        black 92%,
+        transparent
+    );
+}
+
+.tools-track {
+    display: flex;
+    width: max-content;
+    animation: tools-scroll 30s linear infinite;
+}
+
+.tools-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 55px;
+    padding-right: 55px;
+}
+
+.tool-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-width: 110px;
+
+    background: transparent;
+    border: none;
+
+    transition: transform 0.3s ease;
+}
+
+.tool-logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.tool-logo span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.tool-logo:hover {
+    transform: translateY(-3px);
+}
+
+.tool-logo:hover img {
+    transform: scale(1.12);
+}
+
+/* Animation du défilement */
+
+@keyframes tools-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause au survol */
+
+.tools-slider:hover .tools-track {
+    animation-play-state: paused;
+}
+
+/* FRAMEWORKS - TEXTE NOIR EN THÈME CLAIR */
+
+/* FRAMEWORKS - THÈME CLAIR */
+
+[data-theme="light"] #frameworks .section-label {
+    color: #000000 !important;
+    opacity: 1 !important;
 }
