@@ -974,3 +974,66 @@ button:focus-visible {
         padding: 20px;
     }
 }
+
+/* ==============================
+   FRAMEWORKS
+============================== */
+
+.frameworks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.framework-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 26px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: transform var(--transition),
+                border-color var(--transition),
+                box-shadow var(--transition);
+}
+
+.framework-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.08);
+}
+
+.framework-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    background: rgba(139, 92, 246, 0.12);
+    color: var(--purple);
+    font-size: 2rem;
+}
+
+.framework-info h3 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.framework-info p {
+    margin-bottom: 14px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.framework-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: rgba(139, 92, 246, 0.12);
+    color: var(--purple);
+    font-size: 0.75rem;
+    font-weight: 600;
+}

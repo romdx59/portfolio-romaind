@@ -311,3 +311,14 @@
         padding: 22px;
     }
 }
+
+@media (max-width: 600px) {
+    .frameworks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .framework-card {
+        padding: 20px;
+        gap: 15px;
+    }
+}
