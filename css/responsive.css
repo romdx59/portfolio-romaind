@@ -322,3 +322,23 @@
         gap: 15px;
     }
 }
+
+@media (max-width: 600px) {
+    .skill-logo {
+        width: 120px;
+        min-width: 120px;
+        height: 120px;
+    }
+
+    .skill-logo i {
+        font-size: 2.8rem;
+    }
+
+    .skill-logo span {
+        font-size: 0.8rem;
+    }
+
+    .skills-track {
+        gap: 15px;
+    }
+}
