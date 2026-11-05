@@ -1494,7 +1494,10 @@ body,
 
 .experience-modal {
     position: fixed;
-    inset: 0;
+    top: 53px;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -1520,7 +1523,7 @@ body,
     position: relative;
     width: 100%;
     max-width: 950px;
-    max-height: 90vh;
+    max-height: calc(100vh - 93px);
     overflow-y: auto;
     padding: 65px;
     background: var(--bg);
@@ -1919,4 +1922,147 @@ body,
     .experience-gallery img {
         max-height: 230px;
     }
+}
+
+
+/* =========================
+   APERÇU DES IMAGES
+========================= */
+
+.experience-image-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.experience-image-button img {
+    display: block;
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: transform 0.4s ease;
+}
+
+.experience-image-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(10, 10, 20, 0.65);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.experience-image-button:hover img {
+    transform: scale(1.06);
+}
+
+.experience-image-button:hover .experience-image-overlay {
+    opacity: 1;
+}
+
+/* =========================
+   VISIONNEUSE
+========================= */
+
+.experience-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.experience-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.experience-lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 12px;
+    transform: scale(0.85);
+    transition: transform 0.35s ease;
+}
+
+.experience-lightbox.active img {
+    transform: scale(1);
+}
+
+.experience-lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.experience-lightbox-close:hover {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 600px) {
+    .experience-lightbox {
+        padding: 15px;
+    }
+
+    .experience-lightbox img {
+        max-width: 100%;
+        max-height: 80vh;
+    }
+
+    .experience-lightbox-close {
+        top: 10px;
+        right: 20px;
+    }
+}
+
+/* =========================
+   AJUSTEMENT LOGOS OUTILS
+========================= */
+
+/* WordPress */
+.tool-logo img[alt="WordPress"] {
+    transform: scale(1.8);
+}
+
+/* phpMyAdmin */
+.tool-logo img[alt="phpMyAdmin"] {
+    transform: scale(1.4);
+}
+
+/* Conservation de l'effet au survol */
+.tool-logo:hover img[alt="WordPress"] {
+    transform: scale(2);
+}
+
+.tool-logo:hover img[alt="phpMyAdmin"] {
+    transform: scale(1.6);
 }

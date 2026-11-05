@@ -150,4 +150,61 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    
+    // =========================
+    // VISIONNEUSE DES IMAGES
+    // =========================
+    
+    const imageButtons = document.querySelectorAll(".experience-image-button");
+    const lightbox = document.getElementById("experience-lightbox");
+    const lightboxImage = document.getElementById("experience-lightbox-image");
+    const lightboxClose = document.querySelector(".experience-lightbox-close");
+    
+    function openLightbox(image) {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+    
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+    }
+    
+    function closeLightbox() {
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+    
+        // Réinitialisation après l'animation
+        setTimeout(() => {
+            if (!lightbox.classList.contains("active")) {
+                lightboxImage.src = "";
+                lightboxImage.alt = "";
+            }
+        }, 300);
+    }
+    
+    // Ouverture au clic sur une photo
+    imageButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const image = button.querySelector("img");
+            openLightbox(image);
+        });
+    });
+    
+    // Fermeture avec le bouton
+    lightboxClose.addEventListener("click", closeLightbox);
+    
+    // Fermeture en cliquant sur le fond
+    lightbox.addEventListener("click", event => {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    
+    // Fermeture avec Échap
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+    });
+
+
 });
