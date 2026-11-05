@@ -1709,3 +1709,31 @@ body,
     opacity: 1;
     transform: translateY(0);
 }
+
+/* =========================
+   STATUT DES EXPÉRIENCES
+========================= */
+
+.experience-status {
+    display: inline-block;
+    width: fit-content;
+    margin: 18px 32px 0;
+    padding: 6px 13px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Expérience terminée */
+.experience-status.completed {
+    color: #16a34a;
+    background: rgba(22, 163, 74, 0.12);
+    border: 1px solid rgba(22, 163, 74, 0.25);
+}
+
+/* Expérience en cours */
+.experience-status.ongoing {
+    color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+}
