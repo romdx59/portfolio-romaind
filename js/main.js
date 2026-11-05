@@ -72,3 +72,82 @@ themeToggle.addEventListener("click", () => {
 
     applyTheme(currentTheme);
 });
+
+
+/* =========================
+   EXPERIENCES - MODALES
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const experienceButtons = document.querySelectorAll(
+        ".experience-card-trigger"
+    );
+
+    const experienceModals = document.querySelectorAll(
+        ".experience-modal"
+    );
+
+    const closeButtons = document.querySelectorAll(
+        ".experience-modal-close"
+    );
+
+    function openModal(modal) {
+        if (!modal) return;
+
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(modal) {
+        if (!modal) return;
+
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+
+        const anotherModalOpen = document.querySelector(
+            ".experience-modal.active"
+        );
+
+        if (!anotherModalOpen) {
+            document.body.style.overflow = "";
+        }
+    }
+
+    // Ouvrir une modale
+    experienceButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const modalId = button.dataset.modal;
+            const modal = document.getElementById(modalId);
+
+            openModal(modal);
+        });
+    });
+
+    // Fermer avec le bouton
+    closeButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            closeModal(button.closest(".experience-modal"));
+        });
+    });
+
+    // Fermer en cliquant sur le fond
+    experienceModals.forEach(modal => {
+        modal.addEventListener("click", event => {
+            if (event.target === modal) {
+                closeModal(modal);
+            }
+        });
+    });
+
+    // Fermer avec la touche Échap
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            experienceModals.forEach(modal => {
+                closeModal(modal);
+            });
+        }
+    });
+
+});
