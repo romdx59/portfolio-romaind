@@ -389,3 +389,54 @@
     }
 
 }
+
+
+/* ========================================
+   RESPONSIVE - MODALS DES PROJETS
+======================================== */
+
+@media (max-width: 768px) {
+
+    .project-modal {
+        padding: 20px 12px;
+    }
+
+    .project-modal-content {
+        padding: 60px 25px 30px;
+        max-height: calc(100vh - 93px);
+        border-radius: 18px;
+    }
+
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-modal-meta {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .project-modal-content {
+        padding: 60px 18px 25px;
+    }
+
+    .project-modal-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-modal-section p,
+    .project-modal-section li {
+        font-size: 0.92rem;
+    }
+
+    .project-tech-list {
+        gap: 8px;
+    }
+
+    .project-tech-list span {
+        font-size: 0.82rem;
+        padding: 8px 12px;
+    }
+}

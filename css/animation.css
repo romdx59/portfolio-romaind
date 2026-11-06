@@ -156,3 +156,52 @@
         transform: none !important;
     }
 }
+
+
+/* ========================================
+   ANIMATIONS - MODALS DES PROJETS
+======================================== */
+
+/* Apparition du contenu */
+
+.project-modal-content {
+    transition: transform 0.35s ease;
+}
+
+.project-modal.active .project-modal-content {
+    transform: translateY(0);
+}
+
+/* Fermeture */
+
+.project-modal-close {
+    transition: transform 0.3s ease,
+                background 0.3s ease,
+                color 0.3s ease;
+}
+
+.project-modal-close:hover {
+    transform: rotate(90deg);
+}
+
+/* Technologies */
+
+.project-tech-list span {
+    transition: transform 0.3s ease,
+                background 0.3s ease;
+}
+
+.project-tech-list span:hover {
+    transform: translateY(-3px);
+}
+
+/* Images */
+
+.project-gallery img {
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.02);
+}

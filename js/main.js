@@ -206,5 +206,88 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    
+/* ========================================
+   MODALS DES PROJETS
+======================================== */
+
+const projectModals = document.querySelectorAll(".project-modal");
+
+// Ouvrir un modal
+function openProjectModal(modal) {
+    if (!modal) return;
+
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+}
+
+// Fermer un modal
+function closeProjectModal(modal) {
+    if (!modal) return;
+
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+
+    const anotherModalOpen = document.querySelector(
+        ".project-modal.active, .experience-modal.active"
+    );
+
+    if (!anotherModalOpen) {
+        document.body.style.overflow = "";
+    }
+}
+
+// Ouverture au clic sur une carte
+document.addEventListener("click", event => {
+    const trigger = event.target.closest("[data-project-modal]");
+
+    if (!trigger) return;
+
+    const modalId = trigger.dataset.projectModal;
+    const modal = document.getElementById(modalId);
+
+    openProjectModal(modal);
+});
+
+// Ouverture au clavier
+document.querySelectorAll("[data-project-modal]").forEach(card => {
+    card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+
+            const modal = document.getElementById(
+                card.dataset.projectModal
+            );
+
+            openProjectModal(modal);
+        }
+    });
+});
+
+// Fermeture avec le bouton ou le fond
+projectModals.forEach(modal => {
+
+    const closeButton = modal.querySelector(".project-modal-close");
+
+    closeButton?.addEventListener("click", () => {
+        closeProjectModal(modal);
+    });
+
+    modal.addEventListener("click", event => {
+        if (event.target === modal) {
+            closeProjectModal(modal);
+        }
+    });
+
+});
+
+// Fermeture avec Échap
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        projectModals.forEach(closeProjectModal);
+    }
+});
 
 });

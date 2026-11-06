@@ -2066,3 +2066,255 @@ body,
 .tool-logo:hover img[alt="phpMyAdmin"] {
     transform: scale(1.6);
 }
+
+
+/* ========================================
+   MODALS DES PROJETS
+======================================== */
+
+/* Fond du modal */
+
+.project-modal {
+    position: fixed;
+    top: 53px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9990;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 30px 20px;
+    overflow-y: auto;
+
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Fenêtre principale */
+
+.project-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 1050px;
+    max-height: calc(100vh - 113px);
+
+    padding: 65px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    background: var(--bg);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
+
+    transform: translateY(25px);
+    transition: transform 0.35s ease;
+}
+
+.project-modal.active .project-modal-content {
+    transform: translateY(0);
+}
+
+/* Barre de défilement */
+
+.project-modal-content::-webkit-scrollbar {
+    width: 7px;
+}
+
+.project-modal-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.project-modal-content::-webkit-scrollbar-thumb {
+    background: var(--purple);
+    border-radius: 10px;
+}
+
+/* Bouton de fermeture */
+
+.project-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: var(--surface);
+    color: var(--text);
+
+    font-size: 1.8rem;
+    cursor: pointer;
+
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.project-modal-close:hover {
+    background: var(--purple);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* En-tête */
+
+.project-modal-header {
+    margin-bottom: 30px;
+}
+
+.project-modal-category {
+    display: inline-block;
+    margin-bottom: 18px;
+
+    color: var(--blue);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.project-modal-header h2 {
+    margin: 0 0 18px;
+    color: var(--text);
+
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    line-height: 1.3;
+}
+
+.project-modal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Séparation */
+
+.project-modal-divider {
+    width: 100%;
+    height: 1px;
+    margin: 30px 0 38px;
+
+    background: var(--border);
+}
+
+/* Sections internes */
+
+.project-modal-section {
+    margin-bottom: 38px;
+}
+
+.project-modal-section h3 {
+    margin: 0 0 20px;
+    padding-left: 12px;
+
+    border-left: 3px solid var(--purple);
+    color: var(--text);
+
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.project-modal-section p,
+.project-modal-section li {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.project-modal-section p {
+    margin: 0;
+}
+
+.project-modal-section ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.project-modal-section li {
+    padding-left: 3px;
+}
+
+/* Langages et outils */
+
+.project-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.project-tech-list span {
+    padding: 9px 15px;
+
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 30px;
+
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--purple);
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition: background 0.3s ease,
+                transform 0.3s ease;
+}
+
+.project-tech-list span:hover {
+    background: rgba(139, 92, 246, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Galerie */
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-gallery img {
+    display: block;
+    width: 100%;
+    max-height: 300px;
+
+    object-fit: contain;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+}
