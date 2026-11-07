@@ -2406,3 +2406,105 @@ body,
     color: var(--text-muted);
     text-align: center;
 }
+
+
+/* ========================================
+   LISTES DANS LES MODALS PROJETS
+======================================== */
+
+.project-modal-section ul {
+    list-style: disc;
+    padding-left: 25px;
+    margin: 15px 0;
+}
+
+.project-modal-section ul li {
+    display: list-item;
+    list-style: disc;
+    padding-left: 3px;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+
+.project-modal-section ul li::marker {
+    color: var(--purple);
+}
+
+
+/* ========================================
+   SLIDER LANGAGES ET OUTILS DES PROJETS
+======================================== */
+
+.project-tech-slider {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 25px;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 5%,
+        black 95%,
+        transparent
+    );
+}
+
+.project-tech-track {
+    display: flex;
+    width: max-content;
+    animation: project-tech-scroll 25s linear infinite;
+}
+
+.project-tech-slider:hover .project-tech-track {
+    animation-play-state: paused;
+}
+
+.project-tech-group {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+    padding-right: 55px;
+}
+
+.project-tech-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-width: 85px;
+    color: var(--text-muted);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.project-tech-logo i {
+    font-size: 48px;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.project-tech-logo span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.project-tech-logo:hover {
+    color: var(--purple);
+    transform: translateY(-5px);
+}
+
+.project-tech-logo:hover i {
+    transform: scale(1.15);
+}
+
+/* Animation continue */
+@keyframes project-tech-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
