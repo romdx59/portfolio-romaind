@@ -290,4 +290,46 @@ document.addEventListener("keydown", event => {
     }
 });
 
+// ========================================
+// AGRANDISSEMENT DES IMAGES DES PROJETS
+// ========================================
+
+const projectImageButtons = document.querySelectorAll(".project-image-button");
+const projectLightbox = document.getElementById("experience-lightbox");
+const projectLightboxImage = document.getElementById("experience-lightbox-image");
+const projectLightboxClose = projectLightbox?.querySelector(".experience-lightbox-close");
+
+// Ouvrir une image
+projectImageButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const image = button.querySelector("img");
+
+        if (!image || !projectLightbox || !projectLightboxImage) return;
+
+        projectLightboxImage.src = image.src;
+        projectLightboxImage.alt = image.alt;
+
+        projectLightbox.classList.add("active");
+        projectLightbox.setAttribute("aria-hidden", "false");
+
+        document.body.style.overflow = "hidden";
+    });
+});
+
+// Fermer avec la croix
+projectLightboxClose?.addEventListener("click", () => {
+    projectLightbox.classList.remove("active");
+    projectLightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+});
+
+// Fermer en cliquant sur le fond
+projectLightbox?.addEventListener("click", event => {
+    if (event.target === projectLightbox) {
+        projectLightbox.classList.remove("active");
+        projectLightbox.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    }
+});
+
 });
