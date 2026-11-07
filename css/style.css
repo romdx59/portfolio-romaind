@@ -2318,3 +2318,91 @@ body,
     transform: scale(1.02);
     box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
 }
+
+
+/* Image d'aperçu des projets */
+.project-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image à l'intérieur de l'aperçu */
+.project-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* Image des cartes projets : remplissage complet */
+.project-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+.project-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* ========================================
+   STATUTS DES PROJETS
+======================================== */
+
+.project-status {
+    display: inline-block;
+    width: fit-content;
+    margin-top: 18px;
+    padding: 6px 13px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+/* À venir */
+.project-status.upcoming {
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.12);
+    border-color: rgba(37, 99, 235, 0.25);
+}
+
+/* En cours */
+.project-status.ongoing {
+    color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.12);
+    border-color: rgba(139, 92, 246, 0.25);
+}
+
+/* Terminée */
+.project-status.completed {
+    color: #16a34a;
+    background: rgba(22, 163, 74, 0.12);
+    border-color: rgba(22, 163, 74, 0.25);
+}
+
+/* Aperçu vide dans les modals */
+.project-preview-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    padding: 20px;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    color: var(--text-muted);
+    text-align: center;
+}
